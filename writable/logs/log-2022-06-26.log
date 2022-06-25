@@ -1,0 +1,30 @@
+CRITICAL - 2022-06-26 00:21:03 --> Class 'App\Controllers\App\Models\PenjualanModel' not found
+in APPPATH/Controllers/Api.php on line 95.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api->DeletePenjualan('9')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-26 00:21:23 --> Class 'App\Controllers\App\Models\PenjualanModel' not found
+in APPPATH/Controllers/Api.php on line 95.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api->DeletePenjualan('9')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-26 00:21:56 --> Class 'App\Controllers\App\Models\PenjualanModel' not found
+in APPPATH/Controllers/Api.php on line 95.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api->DeletePenjualan('9')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-26 00:24:35 --> Class 'App\Controllers\App\Models\PenjualanModel' not found
+in APPPATH/Controllers/Api.php on line 95.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api->DeletePenjualan('9')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-26 00:25:40 --> Class 'App\Controllers\App\Models\PenjualanModel' not found
+in APPPATH/Controllers/Api.php on line 95.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Api->DeletePenjualan('9')
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()

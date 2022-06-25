@@ -39,6 +39,10 @@ $routes->get('/', 'Home::index');
 $routes->group('api', static function($routes){
     $routes->group('penjualan', static function($routes){
         $routes->post('read', 'Api::ReadPenjualan');
+        $routes->get('read/(:num)', 'Api::ReadPenjualan/$1');
+        $routes->post('save', 'Api::SavePenjualan');
+        $routes->delete('delete/(:num)', 'Api::DeletePenjualan/$1');
+        $routes->post('total', 'Api::GetTotalTerjual');
     });
 });
 
