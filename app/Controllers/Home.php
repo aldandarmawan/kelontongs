@@ -12,4 +12,12 @@ class Home extends BaseController
         $data['barang'] = $BarangModel->findAll();
         return view('home', $data);
     }
+    
+    public function barang(){
+        $JBarangModel = new \App\Models\JenisBarangModel();
+        $JBarangModel->select('id, jenis_barang');
+        
+        $data['jbarang'] = $JBarangModel->findAll();
+        return view('barang', $data);
+    }
 }

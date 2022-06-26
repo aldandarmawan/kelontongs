@@ -5,9 +5,11 @@
         <group>
             <file>file:/opt/lampp/htdocs/kelontongs/app/Config/App.php</file>
             <file>file:/opt/lampp/htdocs/kelontongs/app/Controllers/Api.php</file>
-            <file>file:/opt/lampp/htdocs/kelontongs/app/Config/Database.php</file>
+            <file>file:/opt/lampp/htdocs/kelontongs/app/Models/PenjualanModel.php</file>
+            <file>file:/opt/lampp/htdocs/kelontongs/app/Models/JenisBarangModel.php</file>
             <file>file:/opt/lampp/htdocs/kelontongs/app/Views/home.php</file>
             <file>file:/opt/lampp/htdocs/kelontongs/app/Models/BarangModel.php</file>
+            <file>file:/opt/lampp/htdocs/kelontongs/app/Config/Routes.php</file>
             <file>file:/opt/lampp/htdocs/kelontongs/app/Controllers/Home.php</file>
         </group>
     </open-files>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 25, 2022 at 12:41 PM
+-- Generation Time: Jun 26, 2022 at 08:22 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -43,7 +43,8 @@ INSERT INTO `barang` (`id`, `nama_barang`, `id_jenis_barang`, `deleted_at`) VALU
 (2, 'Teh', 1, NULL),
 (3, 'Pasta Gigi', 2, NULL),
 (4, 'Sabun Mandi', 2, NULL),
-(5, 'Sampo', 2, NULL);
+(5, 'Sampo', 2, NULL),
+(6, 'Susu', 1, '2022-06-27 01:21:29');
 
 -- --------------------------------------------------------
 
@@ -90,8 +91,10 @@ INSERT INTO `penjualan` (`id`, `id_barang`, `stok`, `terjual`, `tgl_transaksi`, 
 (3, 1, 90, 15, '2021-05-10', NULL),
 (4, 3, 100, 20, '2021-05-11', NULL),
 (5, 4, 100, 30, '2021-05-11', NULL),
-(6, 5, 100, 25, '2021-05-12', NULL),
-(7, 2, 81, 5, '2021-05-12', NULL);
+(6, 2, 100, 50, '2022-06-26', NULL),
+(7, 2, 81, 10, '2021-05-12', '2022-06-26 10:16:38'),
+(12, 6, 69, 10, '2022-06-15', '2022-06-27 01:21:29'),
+(13, 6, 14, 1, '2022-06-13', '2022-06-27 01:21:29');
 
 --
 -- Indexes for dumped tables
@@ -123,7 +126,7 @@ ALTER TABLE `penjualan`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `jenis_barang`
@@ -135,7 +138,7 @@ ALTER TABLE `jenis_barang`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -12,13 +12,6 @@ class Api extends BaseController {
         date_default_timezone_set("Asia/Jakarta");
     }
 
-    private function sanitize_sentence($str) {
-        $str = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
-        $str = preg_replace('/[^a-z 0-9_-]+/i', '', $str);
-
-        return $str;
-    }
-
     private function SendJSON($data = []) {
         $array = [
             'request_time' => time(),
@@ -149,6 +142,62 @@ class Api extends BaseController {
         ];
         
         return $this->SendJSON($data);
+    }
+    
+    public function ReadBarang(){
+        $db = \Config\Database::connect();
+        $sql = 'SELECT table1.id_brg, table1.nama_barang, table1.jenis_barang, table2.total_stok FROM (SELECT barang.id AS id_brg, barang.nama_barang, jenis_barang.jenis_barang FROM barang INNER JOIN jenis_barang ON barang.id_jenis_barang = jenis_barang.id WHERE barang.deleted_at IS NULL AND jenis_barang.deleted_at IS NULL) AS table1 LEFT JOIN (SELECT penjualan.id_barang, SUM(penjualan.stok) AS total_stok FROM penjualan WHERE penjualan.deleted_at IS NULL GROUP BY penjualan.id_barang) AS table2 ON table1.id_brg = table2.id_barang;';
+        $query = $db->query($sql);
+        
+        return $this->SendJSON($query->getResultArray());
+    }
+    
+    public function ReadBarangById($id){
+        $BarangModel = new \App\Models\BarangModel();
+        
+        return $this->SendJSON($BarangModel->find($id));
+    }
+    
+    public function SaveBarang() { 
+        if (empty($this->request->getPost('barang')) || empty($this->request->getPost('jenis_barang'))) {
+            return $this->SendJSON(['status' => 0, 'errors' => 'Semua kolom harus diisi']);
+        }
+        
+
+        if (empty($this->request->getPost('id')) == false && $this->request->getPost('id') != 0) {
+            $data['id'] = $this->request->getPost('id');
+        }
+
+        $data['nama_barang'] = $this->request->getPost('barang');
+        $data['id_jenis_barang'] = $this->request->getPost('jenis_barang');
+                
+        
+      
+        $BarangModel = new \App\Models\BarangModel(); 
+        
+        if ($BarangModel->save($data)) {
+
+            return $this->SendJSON(['status' => 1]);
+        } else {
+            return $this->SendJSON(['status' => 0, 'errors' => 'Terjadi Kesalahan']);
+        }
+    }
+    
+    
+    public function DeleteBarang($id) {
+        $BarangModel = new \App\Models\BarangModel();
+        $PenjualanModel = new \App\Models\PenjualanModel();
+        
+        $PenjualanModel->where('id_barang', $id);
+        if($PenjualanModel->delete() != true){
+            return $this->SendJSON(['status' => 0, 'errors' => 'Terjadi Kesalahan']);
+        }
+
+        if ($BarangModel->delete($id)) {
+            return $this->SendJSON(['status' => 1]);
+        } else {
+            return $this->SendJSON(['status' => 0, 'errors' => 'Terjadi Kesalahan']);
+        }
     }
 
 }

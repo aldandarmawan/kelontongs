@@ -14,7 +14,7 @@ class BarangModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['name', 'email'];
+    protected $allowedFields = ['nama_barang', 'id_jenis_barang'];
 
     protected $useTimestamps = false;
     protected $createdField  = 'created_at';

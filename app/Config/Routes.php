@@ -44,6 +44,16 @@ $routes->group('api', static function($routes){
         $routes->delete('delete/(:num)', 'Api::DeletePenjualan/$1');
         $routes->post('total', 'Api::GetTotalTerjual');
     });
+    $routes->group('barang', static function($routes){
+        $routes->get('read', 'Api::ReadBarang');
+        $routes->get('read/(:num)', 'Api::ReadBarangById/$1');
+        $routes->post('save', 'Api::SaveBarang');
+        $routes->delete('delete/(:num)', 'Api::DeleteBarang/$1');
+    });
+});
+
+$routes->group('barang', static function($routes){
+    $routes->get('/', 'Home::barang');
 });
 
 /*

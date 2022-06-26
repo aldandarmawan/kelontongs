@@ -55,8 +55,9 @@
                                 </button>
 
                             </div>
-                            <div class="d-grid gap-2 col-6 mx-auto my-3">
+                            <div class="d-grid gap-2 mx-auto my-3">
                                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModifyModal">Tambah Item</button>
+                                <a class="btn btn-secondary" href="<?= base_url('barang'); ?>">Lihat Barang</a>
                             </div>
                             <div class="table-outer">
                                 <table id="table-penjualan" class="table table-striped table-hover" >
@@ -187,11 +188,7 @@
                                     $("#ModifyInputTerjual").val('');
                                     $("#ModifyInputTanggal").val('');
                                 }
-//                                const modalTitle = exampleModal.querySelector('.modal-title')
-//                                const modalBodyInput = exampleModal.querySelector('.modal-body input')
-//
-//                                modalTitle.textContent = `New message to ${recipient}`
-//                                modalBodyInput.value = recipient
+//             
                             });
 
                             const DeleteModal = document.getElementById('DeleteModal');
